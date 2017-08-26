@@ -23,19 +23,20 @@ public:
 /*
  * Multithreading.
  * Runs approximately (total test cases / (num of threads = 8)) in parallel.
- * github.com/FallAndRise/gcj-templates
+ * https://github.com/FallAndRise/gcj-templates
 */
 mutex lck;
 int testCases;
 int nthreads = thread::hardware_concurrency();
 
 vector<Task> tsk;
-
+int tests_done = 0;
 int executeTask(int test_start, int test_end, int tid){
    while(test_start <= test_end){
       tsk[test_start].run(test_start);
       lck.lock();
-      cerr << "Test #" << test_start << " done" << endl;
+      ++tests_done;
+      cerr << tests_done << "/" << testCases << " tests done" << "\r";
       lck.unlock();
       ++test_start;
    }
@@ -61,6 +62,7 @@ int main(int argc, char *argv[]) {
    for(int th = 0; th < nthreads; ++th){
       _threads[th].wait();
    }
+   cerr << endl;
    for(int test = 1; test <= testCases; ++test){
       tsk[test].print(test);
    }
