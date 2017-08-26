@@ -2,4 +2,4 @@
 
 For B-small-practice.in, singlethreaded code runs in 1m34s.102s.<br>
 For B-small-practice.in, multithreaded code runs in 0m24.993s.<br>
-Ofcourse for large input, we need to use different algorithm.
+Ofcourse for large input, these doesn't work. We need to use different algorithm.

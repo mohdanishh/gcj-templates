@@ -1,3 +1,10 @@
+/*
+ * Multithreading. 8 times faster than normal program. 
+ * Runs (nthreads = 8) threads in parallel. Each thread 
+ * handles approximately (totalTests / 8) test cases.
+ * Taken from: https://github.com/FallAndRise/gcj-templates
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -5,26 +12,25 @@ using namespace std;
 class Task{
 public:
 
+   // Declare variables;
+
    void scan(int testcase){
-      // scan the input corresponding 
+      // Scan the input corresponding 
       // to current test case;
    }
 
    void print(int testcase){
       printf("Case #%d: ", testcase);
-      // print remaining output;
+      // Print remaining output;
    }
 
    int run(int testcase){
+      // Actual solution;
       return 0;
    }
 };
 
-/*
- * Multithreading.
- * Runs approximately (total test cases / (num of threads = 8)) in parallel.
- * https://github.com/FallAndRise/gcj-templates
-*/
+// Ignore code from here;
 mutex lck;
 int testCases;
 int nthreads = thread::hardware_concurrency();
