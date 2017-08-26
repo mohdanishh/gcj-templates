@@ -32,16 +32,13 @@ int nthreads = thread::hardware_concurrency();
 vector<Task> tsk;
 
 int executeTask(int test_start, int test_end, int tid){
-   lck.lock();
-   cerr << "Thread #" << tid << " begins" << endl;
-   lck.unlock();
    while(test_start <= test_end){
       tsk[test_start].run(test_start);
+      lck.lock();
+      cerr << "Test #" << test_start << " done" << endl;
+      lck.unlock();
       ++test_start;
    }
-   lck.lock();
-   cerr << "Thread #" << tid << " ends" << endl;
-   lck.unlock();
    return 0;
 }
 
