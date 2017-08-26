@@ -91,7 +91,7 @@ Observe that non-parallel solution took nearly 1.5 minutes to run. Where as mult
 ## Tips
 - Since we are declaring all the variables in stack, there might be a chance of stack overflow. To prevent that, on linux, you could do some thing like this `ulimit -s unlimited` before running the solution. You can even edit .bashrc file accordingly so that you need not run this command everytime.
 - Since each testcase is an object, suppose if we declare a static array of length 10<sup>5</sup> in each object and there are 100 test cases. But in the actual tests, there are very few tests with length such big. So here we end up using lot of unnecessary memory. So it is better to use vectors, etc; to allocate memory as per required.
-- Try to use number of threads which are atmost maximum allowed. By default, number of threads is same as maximum threads.
+- It's better to use number of threads as maximum-allowed. By default, number of threads is same as maximum-allowed. Using more than that, decreases the performance on average because of extra context switches. (Pigeon hole principle!!)
 
 ## References
 - To be added.

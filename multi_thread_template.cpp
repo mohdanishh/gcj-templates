@@ -13,18 +13,20 @@ class Task{
 public:
 
    // Declare variables;
+   int testid;
 
-   void scan(int testcase){
+   void scan(int _testid){
+      testid = _testid;
       // Scan the input corresponding 
       // to current test case;
    }
 
-   void print(int testcase){
-      printf("Case #%d: ", testcase);
+   void print(){
+      printf("Case #%d: ", testid);
       // Print remaining output;
    }
 
-   int run(int testcase){
+   int run(){
       // Actual solution;
       return 0;
    }
@@ -39,7 +41,7 @@ vector<Task> tsk;
 int tests_done = 0;
 int executeTask(int test_start, int test_end, int tid){
    while(test_start <= test_end){
-      tsk[test_start].run(test_start);
+      tsk[test_start].run();
       lck.lock();
       ++tests_done;
       cerr << tests_done << "/" << testCases << " tests done" << "\r";
@@ -70,7 +72,7 @@ int main(int argc, char *argv[]) {
    }
    cerr << endl;
    for(int test = 1; test <= testCases; ++test){
-      tsk[test].print(test);
+      tsk[test].print();
    }
    return 0;
 }
