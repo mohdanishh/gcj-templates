@@ -57,7 +57,7 @@ Now Let's compare the performance between [singlethreaded](https://github.com/Fa
 ```bash
 bash run.sh
 ```
-to run the codes. It compiles the codes, generate testcases and then runs two programs with the generated testcases and finally compares the difference between their outputs. If there is no error, it should produce output something like this(tested on i7-7700 CPU, 3.6GHz x 8).
+to run the codes. It compiles the codes, generate testcases and then runs two programs with the generated testcases and finally compares the difference between their outputs. If there is no error, it should produce output something like this(tested on i7-7700K).
 ```bash
 Running single threaded
 

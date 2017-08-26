@@ -1,5 +1,5 @@
 /*
- * Multithreading. 8 times faster than normal program. 
+ * Multi-threading. 8 times faster than normal program. 
  * Runs (nthreads = 8) threads in parallel. Each thread 
  * handles approximately (totalTests / 8) test cases.
  * Taken from: https://github.com/FallAndRise/gcj-templates
