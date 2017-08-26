@@ -3,7 +3,7 @@
 source ~/.bashrc
 
 g++ -std=c++11 single.cpp -o single
-g++ -std=c++11 multi_thread_template.cpp -pthread -o multi
+g++ -std=c++11 multi_thread_aplusb.cpp -pthread -o multi
 
 for i in {1..1}
 do
@@ -12,5 +12,5 @@ do
    time ./single < in > o_single.txt
    echo "Running multi threaded"
    time ./multi < in > o_parallel.txt
-   vimdiff o_single.txt o_parallel.txt
+   diff o_single.txt o_parallel.txt
 done

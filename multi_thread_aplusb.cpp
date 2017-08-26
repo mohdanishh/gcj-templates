@@ -5,17 +5,24 @@ using namespace std;
 class Task{
 public:
 
+   int a, b;
+   int res;
+
    void scan(int testcase){
       // scan the input corresponding 
       // to current test case;
+      scanf("%d%d", &a, &b);
    }
 
    void print(int testcase){
       printf("Case #%d: ", testcase);
       // print remaining output;
+      printf("%d\n", res);
    }
 
    int run(int testcase){
+      for(int i = 0; i <= a; ++i) ++res;
+      for(int i = 0; i <= b; ++i) ++res;
       return 0;
    }
 };
@@ -23,6 +30,7 @@ public:
 /*
  * Multithreading.
  * Runs approximately (total test cases / (num of threads = 8)) in parallel.
+ * I think I am trying to kill a fly with a cannon.
  * github.com/FallAndRise/gcj-templates
 */
 mutex lck;
