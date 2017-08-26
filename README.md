@@ -13,7 +13,7 @@ It has 3 member functions.
 - `void scan(int testCase)`
   - `testCase` is the current testcase it is processing.
   - Scan the input for a testcase.
-- `int main(int testCase)`
+- `int run(int testCase)`
   - `testCase` is the current testcase it is processing.
   - Your main solution should go here. You need not scan or print anything in this function.
 - `void print(int testCase)`
@@ -29,9 +29,9 @@ void scan(int testcase){
     scanf("%d%d", &a, &b);
 }
 ```
-`int main(int testCase)` should compute the sum of `a` and `b` and stores it's result in `res`. In this problem, let's compute sum in  O(a + b). So
+`int run(int testCase)` should compute the sum of `a` and `b` and stores it's result in `res`. In this problem, let's compute sum in  O(a + b). So
 ```C++
-int main(int testcase){
+int run(int testcase){
     for(int i = 0; i <= a; ++i) ++res;
     for(int i = 0; i <= b; ++i) ++res;
     return 0;
